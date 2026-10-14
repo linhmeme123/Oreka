@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HUST Search · Tìm kiếm thông tin</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/">H<span>UST</span> Search</a><span class="course">Đồ án · Tìm kiếm thông tin</span></header>
+  <main>
+    <section class="intro">
+      <p class="eyebrow">ĐẠI HỌC BÁCH KHOA HÀ NỘI</p>
+      <h1>Tìm thông tin bạn cần.</h1>
+      <p class="subtitle">Tra cứu bài viết và tài liệu từ HUST cùng các miền con.</p>
+      <form id="search-form">
+        <div class="searchbox"><label class="sr-only" for="query">Từ khóa</label><input id="query" name="q" type="search" maxlength="300" placeholder="Thử tìm: học bổng, tuyển sinh, nghiên cứu…" required><button id="search-button" type="submit">Tìm kiếm <span aria-hidden="true">→</span></button></div>
+        <div class="filters"><label>Loại nội dung <select id="type"><option value="">Tất cả</option><option value="article">Bài viết</option><option value="document">Tài liệu</option></select></label><label>Miền <input id="domain" maxlength="253" placeholder="Ví dụ: hust.edu.vn"></label><span class="hint">Hỗ trợ từ khóa có dấu và không dấu</span></div>
+      </form>
+    </section>
+    <section class="workspace">
+      <div class="search-results"><div class="section-heading"><h2>Kết quả tìm kiếm</h2><span id="result-count"></span></div><p id="search-message" role="status" aria-live="polite">Nhập từ khóa để bắt đầu tìm kiếm.</p><div id="results"></div><nav id="pagination" hidden aria-label="Phân trang"><button id="previous" type="button">← Trước</button><span id="page-label"></span><button id="next" type="button">Sau →</button></nav></div>
+      <aside class="crawl-panel"><p class="eyebrow">KHO DỮ LIỆU</p><div class="document-total"><strong id="document-count">—</strong><span>bài viết & tài liệu đã lập chỉ mục</span></div><div class="status-line"><span class="status-dot" id="status-dot"></span><span id="crawl-state">Đang kết nối…</span></div><p id="crawl-message" role="status" aria-live="polite"></p><button id="crawl-button" type="button">Thu thập ngay</button><p id="crawl-settings" class="panel-note">Hệ thống tự rà soát mỗi 6 giờ theo cấu hình mặc định. Mỗi lượt lấy tối đa 100 trang và tài liệu.</p><dl id="crawl-metrics"><div><dt>Mới</dt><dd id="added">0</dd></div><div><dt>Cập nhật</dt><dd id="updated">0</dd></div><div><dt>Không đổi</dt><dd id="unchanged">0</dd></div><div><dt>Đã xóa</dt><dd id="deleted">0</dd></div><div><dt>Bỏ qua</dt><dd id="skipped">0</dd></div><div><dt>Lỗi</dt><dd id="errors">0</dd></div></dl><p id="last-run" class="panel-note"></p></aside>
+    </section>
+  </main>
+  <footer><span>HUST Search</span><span>Scrapy · Apache Tika · Apache Lucene</span></footer>
+</body>
+</html>
